@@ -4,6 +4,12 @@
 adt
 .gitignore~
 
+/demo
+/demo_unittest
+/SetSystemTime
+/sign
+libs/
+
 #################
 ## Android
 #################
