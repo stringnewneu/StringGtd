@@ -1,0 +1,14 @@
+* Design
+** Actions
+*** [提醒] com.string.gtd.android.REMIND
+**** 可以接受的类:ReminderReceiver和ReminderService
+** Riminder
+*** 需求
+**** 提醒动作
+***** 播放一段音频
+***** 起床(条件停止)
+***** 时间到后将提醒加入一个统一的提醒
+**** 提醒终止条件
+** TODO
+*** 如何能保证只有一个Activity存在
+*** 如何继承Parcel类
