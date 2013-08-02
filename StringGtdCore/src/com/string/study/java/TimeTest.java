@@ -63,13 +63,4 @@ public class TimeTest extends TestCase {
 		return date;
 	}
 
-	public void testFormatToString(){
-		Date date = new Date(1970, 0, 1, 0, 12, 34);
-		long time = date.getTime();
-
-		DateFormat df = new SimpleDateFormat("mm:ss", Locale.US);
-		String formatedTime = df.format(new Date(time));
-		
-		assertEquals("12:34", formatedTime);
-	}
 }

@@ -51,7 +51,7 @@ public class StringGtdTest extends AndroidTestCase {
 		mockTime.set("2012-1-1 00:00");
 
 		long actualTime = Calendar.getInstance().getTimeInMillis();
-		long expectedTime = StringTimeUtils.getTime(2012, 1, 1, 0, 0, 0);
+		long expectedTime = STimeUtils.getTime(2012, 1, 1, 0, 0, 0);
 
 		assertTimeStampEqual(expectedTime, actualTime);
 	}
@@ -96,22 +96,6 @@ public class StringGtdTest extends AndroidTestCase {
 		// 检查reminder执行情况
 
 	}
-
-	public void testInitPromodoroRemind() {
-		// 准备环境,设置当前时间为"2013-7-1 08:00"
-		mockTime.set("2013-7-1 08:00");
-		
-		AnGtdManager gtdManager = AnGtdManager.getGlobalGtdManager(getContext());
-		gtdManager.reset();
-		
-		gtdManager.setState(PromodoroSchedule.WORKING);
-		long remindTime = gtdManager.getNextRemindTime();
-		
-		gtdManager.setNextReminder(remindTime, getContext());
-		
-		mockTime.set("2013-7-1 08:25");
-
-	}
 	
 	public void testChangeWhenStop(){
 		// 准备环境,设置当前时间为"2013-7-1 08:00"
@@ -120,6 +104,6 @@ public class StringGtdTest extends AndroidTestCase {
 		AnGtdManager gtdManager = AnGtdManager.getGlobalGtdManager(getContext());
 		gtdManager.reset();
 		
-		gtdManager.startWork();
+		gtdManager.startItem();
 	}
 }

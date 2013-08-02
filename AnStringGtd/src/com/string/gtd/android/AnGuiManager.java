@@ -11,7 +11,8 @@ public class AnGuiManager extends GuiManager {
 	private Context context = null;
 	private Handler guiHandler;
 
-	public AnGuiManager() {
+	public AnGuiManager(AnGtdManager anGtdManager) {
+		super(anGtdManager);
 	}
 
 	public void updateContext(Context context) {

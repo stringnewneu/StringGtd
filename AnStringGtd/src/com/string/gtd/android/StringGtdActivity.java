@@ -5,8 +5,7 @@ import java.io.IOException;
 
 
 import com.string.gtd.core.GuiManager;
-import com.string.gtd.core.PromodoroSchedule;
-import com.string.gtd.core.StringTimeUtils;
+import com.string.gtd.core.STimeUtils;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,7 +49,7 @@ public class StringGtdActivity extends Activity {
 
 		gtdManager = AnGtdManager.getGlobalGtdManager(this
 				.getApplicationContext());
-
+		this.
 		initGui();
 	}
 
@@ -83,16 +82,15 @@ public class StringGtdActivity extends Activity {
 
 	private void initGui() {
 		tvInfo = (TextView) findViewById(R.id.tvInfo);
-		long currentTime = StringTimeUtils.getCurrentTime();
-		String strCurrentTime = StringTimeUtils.toString_HHmm(currentTime);
+		long currentTime = STimeUtils.curTime();
+		String strCurrentTime = STimeUtils.toString_HHmm(currentTime);
 		tvInfo.setText(strCurrentTime);
 
 		btChange = (Button) findViewById(R.id.btChange);
 		btChange.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (gtdManager.getState() != PromodoroSchedule.WORKING)
-					gtdManager.startWork();
+				gtdManager.startItem();
 			}
 		});
 

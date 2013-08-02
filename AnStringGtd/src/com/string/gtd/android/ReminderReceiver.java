@@ -19,8 +19,8 @@ public class ReminderReceiver extends BroadcastReceiver {
 		// 响铃两声
 		// 
 		
-		AnGuiManager gui = AnGtdManager.getGlobalGuiManager(context);
-		gui.stopCountdown();
+//		AnGtdManager gtdManager = AnGtdManager.getGlobalGtdManager(context);
+//		gtdManager.postExecuteItem();
 		
 		// TODO 记录等操作
 		Intent change = new Intent(context, StringGtdActivity.class);

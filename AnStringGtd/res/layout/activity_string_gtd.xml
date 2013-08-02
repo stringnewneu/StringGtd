@@ -20,22 +20,22 @@
         tools:ignore="HardcodedText" />
 
     <Button
+        android:id="@+id/btChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvInfo"
+        android:text="    -->    "
+        tools:ignore="HardcodedText" />
+
+    <Button
         android:id="@+id/btStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btChange"
         android:layout_alignBottom="@+id/btChange"
-        android:layout_toRightOf="@+id/tvInfo"
+        android:layout_alignParentRight="true"
         android:text="      X      "
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/btChange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tvInfo"
-        android:layout_toLeftOf="@+id/tvInfo"
-        android:text="    -->    "
         tools:ignore="HardcodedText" />
 
 </RelativeLayout>

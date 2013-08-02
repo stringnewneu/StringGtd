@@ -2,8 +2,7 @@ package com.string.gtd.core.test;
 
 
 import com.string.gtd.core.Item;
-import com.string.gtd.core.StringTimeUtils;
-
+import com.string.gtd.core.STimeUtils;
 import junit.framework.TestCase;
 
 public class GtdCoreTest extends TestCase {
@@ -11,10 +10,10 @@ public class GtdCoreTest extends TestCase {
 	public void testItem_toString(){
 		Item item = new Item("2013-7-1 21:30", "ÕÍ…∆Item");
 		
-		long expectTime = StringTimeUtils.getTime(2013, 7, 1, 21, 30, 00);
+		long expectTime = STimeUtils.getTime(2013, 7-1, 1, 21, 30, 00);
 		
 		assertEquals(expectTime, item.plannedTime);
-		assertEquals("ÕÍ…∆Item", item.content);
+		assertEquals("ÕÍ…∆Item", item.name);
 	}
 
 	public void testSimpleItem() {

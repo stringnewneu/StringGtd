@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.string.gtd.core.GtdManager;
-import com.string.gtd.core.PromodoroSchedule;
-import com.string.gtd.core.StringTimeUtils;
 
 public class AnGtdManager extends GtdManager{
 	private static AnGtdManager theGlobalGtdManager = null;
@@ -27,11 +25,12 @@ public class AnGtdManager extends GtdManager{
 		return (AnGuiManager)theGlobalAnGtdManager.getGuiManager();
 	}
 	
-	private AnGtdManager(){
-		gui = new AnGuiManager();
+	public AnGtdManager(){
+		gui = new AnGuiManager(this);
 	}
 	
-	public void setNextReminder(long remindTime, Context context) {
+	@Override
+	public void setNextRemind(long remindTime) {
 		AlarmManager am = (AlarmManager) context.getSystemService(
 				Context.ALARM_SERVICE);
 
@@ -43,16 +42,6 @@ public class AnGtdManager extends GtdManager{
 		am.set(AlarmManager.RTC_WAKEUP, remindTime, sender);	// 设置闹钟
 	}
 
-	public void startWork() {
-		setState(PromodoroSchedule.WORKING);
-		long remindTime = getNextRemindTime();
-		
-		setNextReminder(remindTime, context);
-		
-		long countdownTime = promodoroSchedule.getNextRemindTime() - StringTimeUtils.getCurrentTime();
-		// 发出GUI开始计时命令
-		gui.startCountdown(countdownTime);
-	}
 
 	public void updateContext(Context context) {
 		this.context = context;

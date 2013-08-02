@@ -11,7 +11,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import com.string.gtd.core.MockTime;
-import com.string.gtd.core.StringTimeUtils;
+import com.string.gtd.core.STimeUtils;
 import com.string.testhelper.aidl.ITestHelperService;
 
 public class AnMockTime extends MockTime {
@@ -75,7 +75,7 @@ public class AnMockTime extends MockTime {
 
 	@Override
 	public void set(String time) {
-		long timeToSet = StringTimeUtils.getLongDate(time);
+		long timeToSet = STimeUtils.getLongDate(time);
 		set(timeToSet);
 	}
 

@@ -7,8 +7,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public final class StringTimeUtils {
-	private StringTimeUtils() {
+public final class STimeUtils {
+	public static final int s2ms = 1000;
+	public static final int min2mm = 60 * s2ms;
+	
+	private STimeUtils() {
 	}
 
 	public static long getTime(int year, int mouth, int day, int hour,
@@ -53,13 +56,17 @@ public final class StringTimeUtils {
 		return formatedTime;
 	}
 
-	public static long getCurrentTime() {
+	public static long curTime() {
 		return Calendar.getInstance().getTimeInMillis();
 	}
 
 	public static String currentTimeString_HHmm() {
-		long currentTime = StringTimeUtils.getCurrentTime();
+		long currentTime = STimeUtils.curTime();
 		return toString_HHmm(currentTime);
+	}
+
+	public static long min2mm(int min) {
+		return min * min2mm;
 	}
 
 }

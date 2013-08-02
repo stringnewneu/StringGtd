@@ -9,6 +9,12 @@
 ***** 起床(条件停止)
 ***** 时间到后将提醒加入一个统一的提醒
 **** 提醒终止条件
-** TODO
-*** 如何能保证只有一个Activity存在
-*** 如何继承Parcel类
+** GtdState
+   State:[Work, Rest, NotTracked] //[]表示互斥的状态
+   Work:[Pomo, Free]
+   Pomo:[Work, Rest]
+** TODO 设计一个状态管理类
+* 潜在bug
+** 强制关闭后，启动后界面可能不继续计时，需保存当前状态
+* 疑问
+** 构造方法可以是abstract的吗，如果可以也许可以应用在GuiManager的构造方法上
